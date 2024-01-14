@@ -1,4 +1,4 @@
-This repo contains the code and project for the projects of the Computer Vision course by Prof Edward Wong. 
+This repo contains the code and projects of the Computer Vision course by Prof Edward Wong at NYU. 
 
 Canny Edge Detection Project is the implementation of Canny's Edge Detector algorithm in Python, which involves four major steps, namely, 
 Gaussian smoothing, gradient operation, non-maxima suppression, and thresholding. 
