@@ -8,6 +8,8 @@ In this project, we explore the Canny edge detector algorithm in detail, impleme
 
 ## **Project Methodology**
 
+
+
 ### 1. Gaussian Smoothing
 
 Gaussian smoothing using a predefined 7 × 7 Gaussian mask was used to reduce noise and to blur images. The mask was applied to each pixel of the image using a nested loop that performed a convolution operation to calculate its smoothed value. The center of the mask was used as the reference center. For parts of the Gaussian mask goin
@@ -24,5 +26,18 @@ For gradient operation, predefined masks were used to compute gradients at 0, 45
 
 ### Non-Maxima Suppression:
 Non-maxima suppression is used to suppress non-maximum values in a gradient image and re- tain only the local maximum values, which correspond to edges or other significant image features. In the function, the gradient angles are quantized into four sectors and stored in the sector array. The gradient magnitudes in the gradient magnitude array are compared according to the sector array and non-maximum values are suppressed retaining only gradient maximas. The resulting array of suppressed values is returned as nms, along with an array of all gradient magnitudes after nms excluding 0 values for later percentile calculation.
+
+![3_NMS_barbara](https://github.com/Santoshsrini/CV-NYU/assets/28926309/da930c26-c0a7-4d51-80f3-ddd351ea8b03)
+
+
+
 ### Thresholding:
 Thresholding is then used to convert this NMS image into a binary image by setting a thresh- old value above which a pixel is considered an edge pixel, and below which it is not. In our code, three different threshold values are calculated based on the 25𝑡h, 50𝑡h, and 75𝑡h percentiles of the gradient magnitude image after nms excluding 0 values. The function loops through each pixel of nms array and checks if the value of the pixel is greater than or equal to each of the three thresholds. If it is, the corresponding pixel in the appropriate threshold image is set to 255 (white), indicating that it is an edge pixel. If it is not, the pixel is set to 0 (black), indicating that it is not an edge pixel. The function returns three thresholded images, each with edge pixels set based on a different percentile threshold.
+
+
+![4_Binary_Edge_Map_T1_barbara](https://github.com/Santoshsrini/CV-NYU/assets/28926309/e9f30c7c-dba4-494a-abf9-a2253d6cb897)
+
+![5_Binary_Edge_Map_T2_barbara](https://github.com/Santoshsrini/CV-NYU/assets/28926309/767fc7cc-ec1a-4858-9ee2-59dd02f90a08)
+
+
+![6_Binary_Edge_Map_T3_barbara](https://github.com/Santoshsrini/CV-NYU/assets/28926309/058d8d9d-c25d-4a92-9345-7f759d26056e)
