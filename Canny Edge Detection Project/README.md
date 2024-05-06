@@ -12,7 +12,8 @@ In this project, we explore the Canny edge detector algorithm in detail, impleme
 
 Gaussian smoothing using a predefined 7 × 7 Gaussian mask was used to reduce noise and to blur images. The mask was applied to each pixel of the image using a nested loop that performed a convolution operation to calculate its smoothed value. The center of the mask was used as the reference center. For parts of the Gaussian mask going outside of the image border, the output image was undefined (undefined values were replaced with 0 in the output image). The resulting value after the convolution operation was stored in the ’smooth image’ array at the corresponding pixel position. Normalization was then performed by dividing the results of the ‘smooth image’ array by the sum of the entries (= 140 for the given mask) at each pixel location. The resulting normalized ’smooth image’ array was returned as the output of the function.
 
-Canny Edge Detection Project/Project Images/Input and output images from code in .png format/1_Gaussian_Smoothened_barbara.png
+![1_Gaussian_Smoothened_barbara](https://github.com/Santoshsrini/CV-NYU/assets/28926309/b17b6862-c786-49c0-8755-4d09f41b594b)
+
 
 ### Gradient Operation:
 For gradient operation, predefined masks were used to compute gradients at 0, 45, 90 and 135 degree. The output value was undefined if part of the 3 × 3 mask goes outside of the image border or lies in the undefined region of the image after Gaussian filtering. The gradient magnitude value responses from all four masks after convolution was compared and the maximum of the absolute values of the responses was stored in the max arr. Max arr was then divided by 4 to return the normalized edge magnitude array. The indices of the maximum value for each map are recorded and used to determine the gradient angle of the edges at each pixel position. Thus, the output of the function is the normalized edge magnitude array and the gradient angle array.
