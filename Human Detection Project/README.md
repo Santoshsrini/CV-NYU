@@ -10,11 +10,13 @@ The dataset consists of 10 human images and 10 non-human images which are inputs
 
 ## **Methodology:**
 
-The HOG feature vector for each of the input image - 10 human images and 10 non-human images are computed. The test image's HOG feature is compared with the input images using distance measurement. The class of the 3 nearest neighbours is finally chosen and reported.
+The HOG feature vector for each of the input image - 10 human images and 10 non-human images are computed. The test image's HOG feature is compared with the input images' feature vector using distance measurement ( Histogram intersection and Hellinger distance ). The class of the 3 nearest neighbours is finally chosen and reported.
 
 <img width="752" alt="image" src="https://github.com/Santoshsrini/CV-NYU/assets/28926309/065e7c74-6182-4894-80ca-110d19b447f0">
 
 ## **Results:**
+
+The results for the test images classification as human or not a human is reported using the histogram intersection distance or hellinger distance computation. 
 
 <img width="589" alt="image" src="https://github.com/Santoshsrini/CV-NYU/assets/28926309/af3deff0-15b2-4551-ad5c-5249448e6498">
 
